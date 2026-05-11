@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --searchwidth: clamp(10%, 33%, 90rem);
+    --searchmargin: calc( 50% - 1rem - (var(--searchwidth)/2) )
+}
+body{
+    font-family: Arial;
+}
+#logo{
+    width: clamp(5rem, 10rem, 15%);
+    justify-self: flex-start;
+}
+#search{
+    width: var(--searchwidth);
+    display: flex;
+    justify-content: flex-start;
+    height: 1ch;
+    padding: 1rem 0rem;
+    background: white;
+    box-shadow: 0 0 5px 0 black;
+    position: absolute;
+    margin: 0 var(--searchmargin);
+    border-radius: 20rem;
+}
+#login{
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    height: 50%;
+    width: clamp( 6ch, 10ch, 6rem);
+    float: right;
+    color: white;
+    border-radius: 20rem;
+    box-shadow: 0 0 5px 0 black;
+    justify-content: center;
+}
+nav{
+    background: red;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+
+}
+.promo{
+width: 100%;
+background-color: #050505;
+background-image: url(/imgs/promocao.png);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+height: clamp(7rem, 33vw, 300px);
+}
+.prods{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max-content);
+}
+.prods article{}
