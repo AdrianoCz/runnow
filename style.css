@@ -1,22 +1,31 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
     margin: 0;
     padding: 0;
 }
-:root{
-    --searchwidth: clamp(10%, 33%, 90rem);
-    --searchmargin: calc( 50% - 1rem - (var(--searchwidth)/2) )
+html{
+overflow-y: scroll
 }
-body{
+:root {
+    --searchwidth: clamp(10%, 33%, 90rem);
+    --searchmargin: calc(50% - 1rem - (var(--searchwidth)/2))
+}
+
+body {
     font-family: Arial;
 }
-#logo{
-    width: clamp(5rem, 10rem, 15%);
+
+#logo {
+    width: clamp(6rem, 10rem, 15%);
     justify-self: flex-start;
 }
-#search{
+
+#search {
     width: var(--searchwidth);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 1ch;
     padding: 1rem 0rem;
     background: white;
@@ -24,20 +33,59 @@ body{
     position: absolute;
     margin: 0 var(--searchmargin);
     border-radius: 20rem;
+    text-align: right;
 }
-#login{
+
+#search p {
+    float: right;
+    justify-self: flex-end;
+    align-self: center;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+#search::before {
+    content: "";
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(imgs/lupa.png);
+    background-size: cover;
+    align-self: center;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+#login {
     display: flex;
     align-items: center;
-    border: 2px solid white;
+    font-family: "zalando sans Expanded";
     height: 50%;
-    width: clamp( 6ch, 10ch, 6rem);
+    width: clamp(5ch, 10ch, 6rem);
     float: right;
     color: white;
-    border-radius: 20rem;
-    box-shadow: 0 0 5px 0 black;
     justify-content: center;
+    text-decoration: underline 2px;
+    text-underline-offset: 3px;
+    margin-bottom: 3px;
+    font-weight: 550;
+
 }
-nav{
+
+#login::before {
+    content: "";
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(imgs/user.svg);
+    background-size: contain;
+    align-self: center;
+    vertical-align: middle;
+    margin-right: 0.33rem;
+    margin-top: 5px;
+}
+
+nav {
     background: red;
     height: 5rem;
     display: flex;
@@ -46,17 +94,107 @@ nav{
     justify-content: space-between;
 
 }
-.promo{
-width: 100%;
-background-color: #050505;
-background-image: url(/imgs/promocao.png);
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center;
-height: clamp(7rem, 33vw, 300px);
+
+.promo {
+    width: 100%;
+    background-color: #050505;
+    background-image: url("/imgs/promocao(1).png");
+    background-size: contain ;
+    background-repeat: no-repeat;
+    background-position: center;
+     background-origin: content-box;
+
+    height: clamp(9rem, 33vw, 300px);
 }
-.prods{
+
+.prods {
     display: grid;
-    grid-template-columns: repeat(auto-fit, max-content);
+    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-rows: repeat(auto-fill, 28rem);
+    justify-content: space-around;
+    gap:5rem;
+    column-gap: 5rem;
+    margin: 5rem 0;
+    min-height: 100%;
 }
-.prods article{}
+
+.prods article {
+    width: 15rem;
+    border: 0x solid black;
+    border-radius: 1rem;
+    font-family: "montserrat";
+    box-shadow: 0 0 7px 1px black;
+    height: 28rem;
+
+}
+
+
+.prodphoto{    
+    background-color: black;
+    height: 15rem;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-size: 15rem;
+    background-repeat: no-repeat;
+    background-position: center;   
+    
+}
+.name {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 1.3rem;
+    margin: 1rem 1rem;
+    color: #110f0f;
+}
+.desc{
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buy{
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1.54rem;
+    background-color: red;
+    width: 7ch;
+    color: white;
+    border-radius: 2rem;
+    
+}
+#inihel{
+    background-image: url(imgs//capaceteini.png);
+}
+#profhel {
+    background-image: url(imgs/capaceteprof.png);
+}
+#profmac{
+    background-image: url(imgs/macacaoprof.png);
+}
+#inimac{
+    background-image: url(imgs/macacaoini.png);
+}
+footer{
+    height: 7rem;
+    background-color: #050505;
+    margin-top: 5rem;
+    border-top: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0rem 0px 10px 0px black;
+}
+footer img{
+    height: 50%;
+}
