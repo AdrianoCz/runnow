@@ -103,19 +103,21 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
      background-origin: content-box;
-
     height: clamp(9rem, 33vw, 300px);
 }
 
 .prods {
+    padding-top: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, 15rem);
     grid-template-rows: repeat(auto-fill, 28rem);
     justify-content: space-around;
+    width: 90%;
     gap:5rem;
     column-gap: 5rem;
-    margin: 5rem 0;
+    
     min-height: 100%;
+    margin: auto;
 }
 
 .prods article {
